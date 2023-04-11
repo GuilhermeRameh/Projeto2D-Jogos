@@ -60,6 +60,6 @@ crashlytics-build.properties
 
 AutoMadness/Library/
 AutoMadness/Logs/
-AutoMadness/Packages/
-AutoMadness/ProjectSettings/
 AutoMadness/UserSettings/
+AutoMadness/Temp/
+AutoMadness/Builds/
