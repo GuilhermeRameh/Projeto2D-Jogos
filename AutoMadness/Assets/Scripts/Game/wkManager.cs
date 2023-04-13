@@ -22,10 +22,10 @@ public class wkManager : MonoBehaviour
     //     }
     // }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerStay2D(Collider2D collider)
     {
         Debug.Log("Colision:");
-        if (collision.gameObject.tag == "WK")
+        if (collider.tag == "WK")
         {
             Debug.Log("AAAAAAAAAAAA");
         }
