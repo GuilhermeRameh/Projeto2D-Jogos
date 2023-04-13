@@ -14,7 +14,7 @@ public class AllySpawner : MonoBehaviour
     public void StartSpawning()
     {   
         // Calls the spawn coroutine
-        StartCoroutine(SpawnDelay());
+        // StartCoroutine(SpawnDelay());
     }
 
     IEnumerator SpawnDelay()
