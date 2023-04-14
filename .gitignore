@@ -63,3 +63,7 @@ AutoMadness/Logs/
 AutoMadness/UserSettings/
 AutoMadness/Temp/
 AutoMadness/Builds/
+AutoMadness/Assets/Resources/
+
+*.meta
+*.asset
