@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet_Move : MonoBehaviour
 {
     public GameObject unit;
+    public int mode; // 0 = hit enemy, 1 = hit unit
     private GameObject goal;
     public float speed;
 
@@ -14,9 +15,19 @@ public class Bullet_Move : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        goal = GameObject.FindGameObjectWithTag("Goal");
+        Vector3 direction = new Vector3(0, 0, 0);
 
-        Vector3 direction = goal.transform.position - unit.transform.position;
+        if (unit.gameObject.CompareTag("Enemy"))
+        {
+            goal = GameObject.FindGameObjectWithTag("Spawn");
+            direction = goal.transform.position + unit.transform.position;
+        }
+        else
+        {
+            goal = GameObject.FindGameObjectWithTag("Goal");
+            direction = goal.transform.position - unit.transform.position;
+        }
+
         rb.velocity = new Vector2(direction.x, direction.y).normalized * speed;
 
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90);
@@ -36,9 +47,18 @@ public class Bullet_Move : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Goal"))
+        if (other.gameObject.CompareTag("Goal")  && mode == 0)
         {
             other.gameObject.GetComponent<Goal_Health>().health -= .5f;
+            Destroy(gameObject);
+        } else if (other.gameObject.CompareTag("Spawn") && mode == 1){
+            other.gameObject.GetComponent<Spawn_Health>().health -= .5f;
+            Destroy(gameObject);
+        } else if (other.gameObject.CompareTag("Enemy") && mode == 0){
+            other.gameObject.GetComponent<Enemy_Health>().health -= .5f;
+            Destroy(gameObject);
+        } else if (other.gameObject.CompareTag("Unit") && mode == 1){
+            other.gameObject.GetComponent<Unit_Health>().health -= .5f;
             Destroy(gameObject);
         }
     }

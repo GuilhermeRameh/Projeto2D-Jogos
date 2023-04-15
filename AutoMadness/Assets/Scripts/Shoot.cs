@@ -18,7 +18,7 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (menuController.win == false)
+        if (menuController.end == false)
         {
             timer += Time.deltaTime;
             if (timer >= 2)
