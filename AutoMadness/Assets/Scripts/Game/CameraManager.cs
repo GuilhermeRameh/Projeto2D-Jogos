@@ -22,13 +22,13 @@ public class CameraManager : MonoBehaviour
     {
         if (wkManager.InWindow()==false)
         {
-            GetComponent<Camera>().orthographicSize = 5f;
+            GetComponent<Camera>().orthographicSize = 7f;
             transform.position = player.transform.position + offset;
         }
         else
         {
-            transform.position = new Vector3(15, 6, -10);
-            GetComponent<Camera>().orthographicSize = 12f;
+            transform.position = new Vector3(30, 10, -10);
+            GetComponent<Camera>().orthographicSize = 16f;
         }
     }
 }

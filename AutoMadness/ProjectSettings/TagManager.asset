@@ -17,7 +17,7 @@ TagManager:
   - Water
   - UI
   - BG
-  - 
+  - BG-1
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG-1
+    uniqueID: 3727419815
+    locked: 0
   - name: BG
     uniqueID: 3748231475
     locked: 0
