@@ -9,12 +9,15 @@ public class Swing : MonoBehaviour
     private float timer;
     private Menu_Controller menuController;
     public int mode; // 0 = goal, 1 = spawn
+    public float dmg;
     // Start is called before the first frame update
     void Start()
     {
         menuController = GameObject.Find("Canvas").GetComponent<Menu_Controller>();
         hit = false;
         hit_goal = false;
+        timer = 0;
+
     }
 
     // Update is called once per frame
@@ -27,10 +30,10 @@ public class Swing : MonoBehaviour
             {   
                 if (mode == 0)
                 {
-                    GameObject.FindGameObjectWithTag("Goal").GetComponent<Goal_Health>().health -= 1;
+                    GameObject.FindGameObjectWithTag("Goal").GetComponent<Goal_Health>().health -= dmg;
                 } else if (mode == 1)
                 {
-                    GameObject.FindGameObjectWithTag("Spawn").GetComponent<Spawn_Health>().health -= 1;
+                    GameObject.FindGameObjectWithTag("Spawn").GetComponent<Spawn_Health>().health -= dmg;
                 }
                 timer = 0;
             }
@@ -78,8 +81,8 @@ public class Swing : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= 1)
             {
-                other.gameObject.GetComponent<Enemy_Health>().health -= 1;
-
+                other.gameObject.GetComponent<Enemy_Health>().health -= dmg;
+ 
                 timer = 0;
             }
 

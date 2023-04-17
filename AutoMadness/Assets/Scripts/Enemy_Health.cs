@@ -7,11 +7,13 @@ public class Enemy_Health : MonoBehaviour
 {
     public float health;
     private float maxHealth;
+    private Currency coins;
 
     // Start is called before the first frame update
     void Start()
     {
         maxHealth = health;
+        coins = GameObject.Find("Money").GetComponent<Currency>();
     }
 
     // Update is called once per frame
@@ -19,6 +21,7 @@ public class Enemy_Health : MonoBehaviour
     {
         if (health <= 0)
         {
+            coins.wallet += 1;
             Destroy(gameObject);
         }
     }

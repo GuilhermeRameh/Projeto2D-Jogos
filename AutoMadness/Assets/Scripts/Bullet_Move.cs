@@ -8,6 +8,8 @@ public class Bullet_Move : MonoBehaviour
     public int mode; // 0 = hit enemy, 1 = hit unit
     private GameObject goal;
     public float speed;
+    public float dmg_unit;
+    public float dmg_enemy;
 
     private float timer;
     private Rigidbody2D rb;
@@ -49,16 +51,16 @@ public class Bullet_Move : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Goal")  && mode == 0)
         {
-            other.gameObject.GetComponent<Goal_Health>().health -= .5f;
+            other.gameObject.GetComponent<Goal_Health>().health -= dmg_unit;
             Destroy(gameObject);
         } else if (other.gameObject.CompareTag("Spawn") && mode == 1){
-            other.gameObject.GetComponent<Spawn_Health>().health -= .5f;
+            other.gameObject.GetComponent<Spawn_Health>().health -= dmg_enemy;
             Destroy(gameObject);
         } else if (other.gameObject.CompareTag("Enemy") && mode == 0){
-            other.gameObject.GetComponent<Enemy_Health>().health -= .5f;
+            other.gameObject.GetComponent<Enemy_Health>().health -= dmg_unit;
             Destroy(gameObject);
         } else if (other.gameObject.CompareTag("Unit") && mode == 1){
-            other.gameObject.GetComponent<Unit_Health>().health -= .5f;
+            other.gameObject.GetComponent<Unit_Health>().health -= dmg_enemy;
             Destroy(gameObject);
         }
     }
