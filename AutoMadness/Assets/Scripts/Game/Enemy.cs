@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     }
 
     void Move()
-    {
+    { 
         transform.Translate(-transform.right*movespeed*Time.deltaTime);
     }
 
@@ -33,5 +33,8 @@ public class Enemy : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.white;
     }
 
-
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
 }

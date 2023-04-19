@@ -6,9 +6,12 @@ public class Shoot : MonoBehaviour
 {
     public GameObject bullet;
     public GameObject unit;
+    public int mode = 0; //0 = unit, 1 = enemy
+    public float speed;
 
     private float timer;
     private Menu_Controller menuController;
+    private Upgrades upgrades;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,10 +21,10 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (menuController.win == false)
+        if (menuController.end == false)
         {
             timer += Time.deltaTime;
-            if (timer >= 2)
+            if (timer >= speed)
             {
                 shoot();
                 timer = 0;

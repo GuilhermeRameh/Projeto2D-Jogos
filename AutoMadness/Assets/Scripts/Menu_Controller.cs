@@ -9,11 +9,11 @@ using TMPro;
 public class Menu_Controller : MonoBehaviour
 {
     public GameObject EndGamePanel;
-    public bool win;
+    public bool end;
 
     void Start()
     {
-        win = false;
+        end = false;
         EndGamePanel.SetActive(false);
 
     }
@@ -21,7 +21,15 @@ public class Menu_Controller : MonoBehaviour
     public void WinGame()
     {
         EndGamePanel.SetActive(true);
-        win = true;
+        EndGamePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Enemy Defeated! <br> <br> Press R to restart";
+        end = true;
+    }
+
+    public void LoseGame()
+    {
+        EndGamePanel.SetActive(true);
+        EndGamePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Game Over! <br> <br> Press R to restart";
+        end = true;
     }
 
 
@@ -31,7 +39,7 @@ public class Menu_Controller : MonoBehaviour
     }
 
     public void Update(){
-        if (win){
+        if (end){
             if (Input.GetKeyDown(KeyCode.R)){
                 Restart();
             }

@@ -7,8 +7,8 @@ TagManager:
   - Goal
   - Unit
   - Bullet
-  - WK
-  - window_collider
+  - Enemy
+  - Spawn
   layers:
   - Default
   - TransparentFX
@@ -18,6 +18,8 @@ TagManager:
   - UI
   - BG
   - BG-1
+  - 
+  - 
   - 
   - 
   - 

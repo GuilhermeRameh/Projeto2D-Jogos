@@ -27,8 +27,8 @@ public class CameraManager : MonoBehaviour
         }
         else
         {
-            transform.position = new Vector3(30, 10, -10);
-            GetComponent<Camera>().orthographicSize = 16f;
+            transform.position = new Vector3(30, 14, -10);
+            GetComponent<Camera>().orthographicSize = 20f;
         }
     }
 }
