@@ -9,12 +9,14 @@ using TMPro;
 public class Menu_Controller : MonoBehaviour
 {
     public GameObject EndGamePanel;
+    public GameObject[] PauseMenu;
     public bool end;
 
     void Start()
     {
         end = false;
         EndGamePanel.SetActive(false);
+        PauseMenu[1].SetActive(false);
 
     }
 
@@ -35,6 +37,7 @@ public class Menu_Controller : MonoBehaviour
 
     public void Restart()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -44,6 +47,20 @@ public class Menu_Controller : MonoBehaviour
                 Restart();
             }
         }
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0;
+        PauseMenu[0].SetActive(false);
+        PauseMenu[1].SetActive(true);
+    }
+
+    public void Unpause()
+    {
+        Time.timeScale = 1;
+        PauseMenu[0].SetActive(true);
+        PauseMenu[1].SetActive(false);
     }
 
 }
