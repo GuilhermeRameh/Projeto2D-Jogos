@@ -15,10 +15,10 @@ public class Upgrades : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        melee = (GameObject)Resources.Load("Prefab/Melee_Unit", typeof(GameObject));
-        ranged = (GameObject)Resources.Load("Prefab/Ranged_Unit", typeof(GameObject));
+        melee = (GameObject)Resources.Load("Prefabs/MeleeUnit", typeof(GameObject));
+        ranged = (GameObject)Resources.Load("Prefabs/RangedUnit", typeof(GameObject));
 
-        spawn = GameObject.Find("Infantry").GetComponent<Spawn_Unit>();
+        spawn = GameObject.Find("SpawnUnit").GetComponent<Spawn_Unit>();
         coins = GameObject.Find("Money").GetComponent<Currency>();
         cooldown = 0;
         error_msg.SetActive(false);
@@ -42,7 +42,7 @@ public class Upgrades : MonoBehaviour
         } else if (Input.GetKeyDown(KeyCode.Alpha9)){
             if (coins.wallet >= 5){
                 ranged = (GameObject)Resources.Load("Prefab/Ranged_Upgrade", typeof(GameObject));
-                bullet = (GameObject)Resources.Load("Prefab/Bullet_Unit", typeof(GameObject));
+                bullet = (GameObject)Resources.Load("Prefabs/RangedBullet", typeof(GameObject));
                 bullet.GetComponent<Bullet_Move>().dmg_unit += 1;
                 ranged.GetComponent<Unit_Health>().health += 1;
                 ranged.GetComponent<Shoot>().bullet = bullet;

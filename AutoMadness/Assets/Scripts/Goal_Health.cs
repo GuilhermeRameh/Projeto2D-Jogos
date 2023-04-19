@@ -14,7 +14,7 @@ public class Goal_Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        menuController = GameObject.Find("Canvas").GetComponent<Menu_Controller>();
+        menuController = GameObject.Find("MenuCanvas").GetComponent<Menu_Controller>();
         maxHealth = health;
     }
 

@@ -18,11 +18,11 @@ public class Spawn_Unit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        menuController = GameObject.Find("Canvas").GetComponent<Menu_Controller>();
+        menuController = GameObject.Find("MenuCanvas").GetComponent<Menu_Controller>();
         coins = GameObject.Find("Money").GetComponent<Currency>();
-        upgrades = GameObject.Find("Infantry").GetComponent<Upgrades>();
-        ranged = upgrades.ranged;
-        melee = upgrades.melee;
+        // upgrades = GameObject.Find("SpawnUnit").GetComponent<Upgrades>();
+        // ranged = upgrades.ranged;
+        // melee = upgrades.melee;
         ranged_price = 2;
         melee_price = 1;
         cooldown = 0;

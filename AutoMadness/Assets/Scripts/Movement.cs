@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         maxSpeed = speed;
-        menuController = GameObject.Find("Canvas").GetComponent<Menu_Controller>();
+        menuController = GameObject.Find("MenuCanvas").GetComponent<Menu_Controller>();
         if (mode == 0){
             goal = GameObject.FindGameObjectWithTag("Goal");
         } else if (mode == 1){

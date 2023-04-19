@@ -13,7 +13,7 @@ public class Swing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        menuController = GameObject.Find("Canvas").GetComponent<Menu_Controller>();
+        menuController = GameObject.Find("MenuCanvas").GetComponent<Menu_Controller>();
         hit = false;
         hit_goal = false;
         timer = 0;
