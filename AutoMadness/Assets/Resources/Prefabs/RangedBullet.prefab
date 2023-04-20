@@ -94,8 +94,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4713291030408299939}
   - component: {fileID: -3531744842059386616}
-  - component: {fileID: -8760457976555502417}
   - component: {fileID: 4703545936817132802}
+  - component: {fileID: -2419183716620359523}
   m_Layer: 0
   m_Name: RangedBullet
   m_TagString: Bullet
@@ -145,27 +145,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0723238, y: 1}
   m_EdgeRadius: 0
---- !u!50 &-8760457976555502417
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119856473740112032}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &4703545936817132802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +159,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 909591350505060395, guid: 219f34a98757a43429e409b5b9d0cb0c, type: 3}
   mode: 0
-  speed: 3
-  dmg_unit: 0.5
-  dmg_enemy: 0.5
+  speed: 5
+  dmg_unit: 1
+  dmg_enemy: 1
+--- !u!50 &-2419183716620359523
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119856473740112032}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6

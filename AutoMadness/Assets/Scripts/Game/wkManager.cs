@@ -1,23 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps; 
 
 public class wkManager : MonoBehaviour
 {
     public wkManager instance;
     void Awake() { instance = this; }
 
+    public GameObject e_key;
+
     public List<Collider2D> workStations;
     private int wsId = -1;
     public static bool in_window = false;
 
     public List<GameObject> WSMenus;
+    public List<GameObject> maps;
+
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.tag=="WK")
         {
-            wsId = int.Parse(collider.name.Split("WS")[1])-1;
+            wsId = int.Parse(collider.name.Split("WS")[1]);
+            maps[wsId].SetActive(true);
+            e_key.SetActive(true);
             // Debug.Log(wsId);
         }
         if(collider.tag=="window_collider")
@@ -31,6 +38,8 @@ public class wkManager : MonoBehaviour
         if (collider.tag=="WK")
         {
             WSMenus[wsId].SetActive(false);
+            maps[wsId].SetActive(false);
+            e_key.SetActive(false);
             wsId = -1;
         }
         else
@@ -46,7 +55,7 @@ public class wkManager : MonoBehaviour
             if (wsId != -1)
             {
                 Popup();
-                Debug.LogFormat("Abre o Menu {0}", wsId);
+                // Debug.LogFormat("Abre o Menu {0}", wsId);
             } 
         }
     }

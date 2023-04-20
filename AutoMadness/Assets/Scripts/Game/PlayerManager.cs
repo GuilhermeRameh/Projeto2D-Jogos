@@ -11,6 +11,7 @@ public class PlayerManager : MonoBehaviour
     Vector2 move;
     public Animator animator;
     bool lookingRight = true;
+    public GameObject e_key;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class PlayerManager : MonoBehaviour
 
     void FixedUpdate()
     {
+        e_key.transform.position = transform.position + new Vector3(1, 2, 1);
         rb.velocity = new Vector2(move.x * speed * Time.deltaTime, rb.velocity.y);
         animator.SetFloat("speed", Math.Abs(rb.velocity[0]));
     }
