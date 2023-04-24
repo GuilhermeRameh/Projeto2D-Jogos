@@ -23,14 +23,14 @@ public class Bullet_Move : MonoBehaviour
         {
             goal = GameObject.FindGameObjectWithTag("Spawn");
             direction = goal.transform.position + unit.transform.position;
+            rb.velocity = new Vector2(direction.y, direction.x).normalized * speed;
         }
         else
         {
             goal = GameObject.FindGameObjectWithTag("Goal");
             direction = goal.transform.position - unit.transform.position;
+            rb.velocity = new Vector2(direction.x, direction.y).normalized * speed;
         }
-
-        rb.velocity = new Vector2(direction.x, direction.y).normalized * speed;
 
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90);
 

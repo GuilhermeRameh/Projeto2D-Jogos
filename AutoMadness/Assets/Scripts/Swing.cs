@@ -7,6 +7,7 @@ public class Swing : MonoBehaviour
     private bool hit;
     private bool hit_goal;
     private float timer;
+    private float timer_hit;
     private Menu_Controller menuController;
     public int mode; // 0 = goal, 1 = spawn
     public float dmg;
@@ -17,6 +18,7 @@ public class Swing : MonoBehaviour
         hit = false;
         hit_goal = false;
         timer = 0;
+        timer_hit = 0;
 
     }
 
@@ -42,6 +44,8 @@ public class Swing : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        //Debug.Log(other.gameObject.tag);
+
         if (other.gameObject.CompareTag("Goal") && mode == 0)
         {
             hit_goal = true;
@@ -78,23 +82,27 @@ public class Swing : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy") && mode == 0 && hit == true)
         {
-            timer += Time.deltaTime;
-            if (timer >= 1)
-            {
-                other.gameObject.GetComponent<Enemy_Health>().health -= dmg;
- 
-                timer = 0;
-            }
+            //timer_hit += Time.deltaTime;
+            //Debug.Log(timer_hit);
+            //if (timer_hit >= 1)
+            //{   
+            //    other.gameObject.GetComponent<Enemy_Health>().health -= dmg;
+            //    Debug.Log(other.gameObject.GetComponent<Enemy_Health>().health);
+            //    timer_hit = 0;
+            //}
+
+            other.gameObject.GetComponent<Enemy_Health>().health -= dmg;
 
         } else if (other.gameObject.CompareTag("Unit") && mode == 1 && hit == true)
         {
-            timer += Time.deltaTime;
-            if (timer >= 1)
-            {
-                other.gameObject.GetComponent<Unit_Health>().health -= 1;
+            //timer_hit += Time.deltaTime;
+            //if (timer_hit >= 1)
+            //{
+            //    other.gameObject.GetComponent<Unit_Health>().health -= 1;
+            //    timer_hit = 0;
+            //}
 
-                timer = 0;
-            }
+            other.gameObject.GetComponent<Unit_Health>().health -= 1;
         }
     }
 }

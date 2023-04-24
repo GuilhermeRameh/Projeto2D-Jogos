@@ -6,12 +6,13 @@ public class Shoot : MonoBehaviour
 {
     public GameObject bullet;
     public GameObject unit;
-    public int mode = 0; //0 = unit, 1 = enemy
+    public int mode; //0 = unit, 1 = enemy
     public float speed;
 
     private float timer;
     private Menu_Controller menuController;
     private Upgrades upgrades;
+    private Vector3 pos;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +35,12 @@ public class Shoot : MonoBehaviour
     }
 
     void shoot()
-    {
-        Instantiate(bullet, unit.transform.position, Quaternion.identity);
+    {   
+        if (mode == 0){
+            pos = new Vector3(unit.transform.position.x + 1, unit.transform.position.y, 0);
+        } else if (mode == 1){
+            pos = new Vector3(unit.transform.position.x - 1, unit.transform.position.y, 0);
+        }
+        Instantiate(bullet, pos, Quaternion.identity);
     }
 }

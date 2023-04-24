@@ -18,7 +18,7 @@ public class Upgrades : MonoBehaviour
         melee = (GameObject)Resources.Load("Prefabs/MeleeUnit", typeof(GameObject));
         ranged = (GameObject)Resources.Load("Prefabs/RangedUnit", typeof(GameObject));
 
-        spawn = GameObject.Find("SpawnUnit").GetComponent<Spawn_Unit>();
+        spawn = GameObject.Find("SpawnAllies").GetComponent<Spawn_Unit>();
         coins = GameObject.Find("Money").GetComponent<Currency>();
         cooldown = 0;
         error_msg.SetActive(false);
@@ -29,7 +29,7 @@ public class Upgrades : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha0)){
             if (coins.wallet >= 5){
-                melee = (GameObject)Resources.Load("Prefab/Melee_Upgrade", typeof(GameObject));
+                melee = (GameObject)Resources.Load("Prefabs/MeleeUpgrade", typeof(GameObject));
                 melee.GetComponent<Swing>().dmg += 1;
                 melee.GetComponent<Unit_Health>().health += 1;
                 spawn.melee_price += 1;
@@ -41,7 +41,7 @@ public class Upgrades : MonoBehaviour
             }
         } else if (Input.GetKeyDown(KeyCode.Alpha9)){
             if (coins.wallet >= 5){
-                ranged = (GameObject)Resources.Load("Prefab/Ranged_Upgrade", typeof(GameObject));
+                ranged = (GameObject)Resources.Load("Prefabs/RangedUpgrade", typeof(GameObject));
                 bullet = (GameObject)Resources.Load("Prefabs/RangedBullet", typeof(GameObject));
                 bullet.GetComponent<Bullet_Move>().dmg_unit += 1;
                 ranged.GetComponent<Unit_Health>().health += 1;
