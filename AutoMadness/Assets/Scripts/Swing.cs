@@ -7,7 +7,6 @@ public class Swing : MonoBehaviour
     private bool hit;
     private bool hit_goal;
     private float timer;
-    private float timer_hit;
     private Menu_Controller menuController;
     public int mode; // 0 = goal, 1 = spawn
     public float dmg;
@@ -18,7 +17,6 @@ public class Swing : MonoBehaviour
         hit = false;
         hit_goal = false;
         timer = 0;
-        timer_hit = 0;
 
     }
 

@@ -23,7 +23,7 @@ public class Spawn_Enemy : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= 5)
             {
-                //spawn();
+                spawn();
                 timer = 0;
             }
         }
@@ -31,8 +31,7 @@ public class Spawn_Enemy : MonoBehaviour
 
     void spawn()
     {
-        //int rand = Random.Range(0, 2);
-        int rand = 0;
+        int rand = Random.Range(0, 2);
         if (rand == 0){
             Instantiate(melee, origin.transform.position, Quaternion.identity);
         } else if (rand == 1){

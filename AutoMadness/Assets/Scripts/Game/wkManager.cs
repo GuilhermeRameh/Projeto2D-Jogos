@@ -17,6 +17,18 @@ public class wkManager : MonoBehaviour
     public List<GameObject> WSMenus;
     public List<GameObject> maps;
 
+    private Currency coins;
+    private GameObject coin_image;
+    private GameObject error_msg;
+
+    public void Start(){
+        coins = GameObject.Find("Money").GetComponent<Currency>();
+        coin_image = GameObject.Find("Coins");
+        error_msg = GameObject.Find("ErrorMsg");
+        coins.money.enabled = false;
+        coin_image.SetActive(false);
+    }
+
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
@@ -40,6 +52,9 @@ public class wkManager : MonoBehaviour
             WSMenus[wsId].SetActive(false);
             maps[wsId].SetActive(false);
             e_key.SetActive(false);
+            coins.money.enabled = false;
+            coin_image.SetActive(false);
+            error_msg.SetActive(false);
             wsId = -1;
         }
         else
@@ -69,10 +84,15 @@ public class wkManager : MonoBehaviour
     void Popup()
     {
         WSMenus[wsId].SetActive(true);
+        coins.money.enabled = true;
+        coin_image.SetActive(true);
     }
     public void ClosePopup()
     {
         WSMenus[wsId].SetActive(false);
+        coins.money.enabled = false;
+        coin_image.SetActive(false);
+        error_msg.SetActive(false);
     }
 
     public static bool InWindow()
