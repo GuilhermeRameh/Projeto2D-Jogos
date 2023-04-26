@@ -13,6 +13,7 @@ public class Spawn_Enemy : MonoBehaviour
     void Start()
     {
         menuController = GameObject.Find("MenuCanvas").GetComponent<Menu_Controller>();
+        Instantiate(melee, origin.transform.position, Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -30,8 +31,7 @@ public class Spawn_Enemy : MonoBehaviour
 
     void spawn()
     {
-        //int rand = Random.Range(0, 2);
-        int rand = 0;
+        int rand = Random.Range(0, 2);
         if (rand == 0){
             Instantiate(melee, origin.transform.position, Quaternion.identity);
         } else if (rand == 1){

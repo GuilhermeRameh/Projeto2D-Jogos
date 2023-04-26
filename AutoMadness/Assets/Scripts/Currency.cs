@@ -7,6 +7,7 @@ public class Currency : MonoBehaviour
 {
     public int wallet;
     public TextMeshProUGUI money;
+    public TextMeshProUGUI money_main;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +18,6 @@ public class Currency : MonoBehaviour
     void Update()
     {
         money.text = wallet.ToString();
+        money_main.text = wallet.ToString();
     }
 }

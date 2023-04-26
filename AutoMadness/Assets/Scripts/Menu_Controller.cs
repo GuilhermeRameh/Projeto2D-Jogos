@@ -16,7 +16,7 @@ public class Menu_Controller : MonoBehaviour
     {
         end = false;
         EndGamePanel.SetActive(false);
-        PauseMenu[1].SetActive(false);
+        //PauseMenu[1].SetActive(false);
 
     }
 

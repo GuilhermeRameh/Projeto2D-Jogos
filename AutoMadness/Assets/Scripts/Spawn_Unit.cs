@@ -14,7 +14,7 @@ public class Spawn_Unit : MonoBehaviour
     private Menu_Controller menuController;
     private Upgrades upgrades;
     private Currency coins;
-    private int cooldown;
+    public int cooldown;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,35 +32,30 @@ public class Spawn_Unit : MonoBehaviour
     // Update is called once per fSrame
     void Update()
     {
-        if(menuController.end == false){
-            spawn();
-        }
 
-        if (cooldown > 0){
-            cooldown -= 1;
-        } else {
-            error_msg.SetActive(false);
-        }
     }
 
-    void spawn()
+    public void spawn_melee()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1)){
-            if (coins.wallet >= melee_price){
-                Instantiate(melee, origin.transform.position, Quaternion.identity);
-                coins.wallet -= melee_price;
-            } else {
-                error_msg.SetActive(true);
-                cooldown = 15;
-            }
-        } else if (Input.GetKeyDown(KeyCode.Alpha2)){
-            if (coins.wallet >= ranged_price){
-                Instantiate(ranged, origin.transform.position, Quaternion.identity);
-                coins.wallet -= ranged_price;
-            } else {
-                error_msg.SetActive(true);
-                cooldown = 15;
-            }
+
+        if (coins.wallet >= melee_price){
+            error_msg.SetActive(false);
+            Instantiate(melee, origin.transform.position, Quaternion.identity);
+            coins.wallet -= melee_price;
+        } else {
+            error_msg.SetActive(true);
+        }
+
+    }
+
+    public void spawn_ranged()
+    {
+        if (coins.wallet >= ranged_price){
+            error_msg.SetActive(false);
+            Instantiate(ranged, origin.transform.position, Quaternion.identity);
+            coins.wallet -= ranged_price;
+        } else {
+            error_msg.SetActive(true);
         }
     }
 }
