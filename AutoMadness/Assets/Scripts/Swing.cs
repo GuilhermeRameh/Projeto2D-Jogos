@@ -7,6 +7,8 @@ public class Swing : MonoBehaviour
     private bool hit;
     private bool hit_goal;
     private float timer;
+    private float timer_hit_e;
+    private float timer_hit_u;
     private Menu_Controller menuController;
     public int mode; // 0 = goal, 1 = spawn
     public float dmg;
@@ -17,7 +19,8 @@ public class Swing : MonoBehaviour
         hit = false;
         hit_goal = false;
         timer = 0;
-
+        timer_hit_e = 0;
+        timer_hit_u = 0;
     }
 
     // Update is called once per frame
@@ -80,27 +83,27 @@ public class Swing : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy") && mode == 0 && hit == true)
         {
-            //timer_hit += Time.deltaTime;
+            timer_hit_u += 1;
             //Debug.Log(timer_hit);
-            //if (timer_hit >= 1)
-            //{   
-            //    other.gameObject.GetComponent<Enemy_Health>().health -= dmg;
-            //    Debug.Log(other.gameObject.GetComponent<Enemy_Health>().health);
-            //    timer_hit = 0;
-            //}
+            if (timer_hit_u >= 5)
+            {
+                other.gameObject.GetComponent<Enemy_Health>().health -= 1;
+                timer_hit_u = 0;
+            }
 
-            other.gameObject.GetComponent<Enemy_Health>().health -= dmg;
+            //other.gameObject.GetComponent<Enemy_Health>().health -= dmg;
 
         } else if (other.gameObject.CompareTag("Unit") && mode == 1 && hit == true)
         {
-            //timer_hit += Time.deltaTime;
-            //if (timer_hit >= 1)
-            //{
-            //    other.gameObject.GetComponent<Unit_Health>().health -= 1;
-            //    timer_hit = 0;
-            //}
+            timer_hit_e += 1;
+            //Debug.Log(timer_hit);
+            if (timer_hit_e >= 5)
+            {
+                other.gameObject.GetComponent<Unit_Health>().health -= 1;
+                timer_hit_e = 0;
+            }
 
-            other.gameObject.GetComponent<Unit_Health>().health -= 1;
+            //other.gameObject.GetComponent<Unit_Health>().health -= 1;
         }
     }
 }

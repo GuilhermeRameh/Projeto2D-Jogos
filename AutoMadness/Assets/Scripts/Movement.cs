@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour
         }
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Goal") && mode == 0)
         {

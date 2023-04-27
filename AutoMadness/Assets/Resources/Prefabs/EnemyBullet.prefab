@@ -27,6 +27,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBullet
       objectReference: {fileID: 0}
+    - target: {fileID: 3978762649942083757, guid: 8671d76a4f176f1499e1d9fcbd937469, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4713291030408299939, guid: 8671d76a4f176f1499e1d9fcbd937469, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -45,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4713291030408299939, guid: 8671d76a4f176f1499e1d9fcbd937469, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4713291030408299939, guid: 8671d76a4f176f1499e1d9fcbd937469, type: 3}
       propertyPath: m_LocalRotation.x
@@ -53,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4713291030408299939, guid: 8671d76a4f176f1499e1d9fcbd937469, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4713291030408299939, guid: 8671d76a4f176f1499e1d9fcbd937469, type: 3}
       propertyPath: m_LocalRotation.z
@@ -65,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4713291030408299939, guid: 8671d76a4f176f1499e1d9fcbd937469, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4713291030408299939, guid: 8671d76a4f176f1499e1d9fcbd937469, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

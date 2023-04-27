@@ -9,6 +9,10 @@ TagManager:
   - Bullet
   - Enemy
   - Spawn
+  - WK
+  - window_collider
+  - Turret
+  - Missil
   layers:
   - Default
   - TransparentFX
@@ -18,8 +22,6 @@ TagManager:
   - UI
   - BG
   - BG-1
-  - 
-  - 
   - 
   - 
   - 
