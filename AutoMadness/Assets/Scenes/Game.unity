@@ -4536,6 +4536,8 @@ MonoBehaviour:
   unit: {fileID: 614752302}
   mode: 0
   speed: 2
+  target: []
+  close_target: {fileID: 0}
 --- !u!212 &614752304
 SpriteRenderer:
   m_ObjectHideFlags: 0

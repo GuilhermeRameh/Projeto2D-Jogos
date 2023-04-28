@@ -33,8 +33,9 @@ public class Bullet_Turret : MonoBehaviour
         //    rb.velocity = new Vector2(direction.x, direction.y).normalized * speed;
         //}
 
-        goal = GameObject.FindGameObjectWithTag("Enemy");
-        direction = goal.transform.position - unit.transform.position;
+        goal = unit.GetComponent<Turret>().close_target;
+        Vector3 correction = new Vector3(unit.transform.position.x + 2, unit.transform.position.y, 0);
+        direction = goal.transform.position - correction;
         rb.velocity = new Vector2(direction.x, direction.y).normalized * speed;
 
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 180);
@@ -57,9 +58,17 @@ public class Bullet_Turret : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy") && mode == 0){
             other.gameObject.GetComponent<Enemy_Health>().health -= dmg_unit;
             Destroy(gameObject);
+            if (other.gameObject.GetComponent<Enemy_Health>().health <= 0)
+            {
+                unit.GetComponent<Turret>().target.Remove(other.gameObject);
+            }
         } else if (other.gameObject.CompareTag("Unit") && mode == 1){
             other.gameObject.GetComponent<Unit_Health>().health -= dmg_enemy;
             Destroy(gameObject);
+            if (other.gameObject.GetComponent<Enemy_Health>().health <= 0)
+            {
+                unit.GetComponent<Turret>().target.Remove(other.gameObject);
+            }
         }
     }
 }
