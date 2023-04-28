@@ -17,8 +17,8 @@ public class CameraManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        goal_health = GameObject.Find("GoalHealth");
-        spawn_health = GameObject.Find("SpawnHealth");
+        goal_health = GameObject.Find("EnemyHealth");
+        spawn_health = GameObject.Find("AllyHealth");
         coin = GameObject.Find("Coins_Main");
         money = GameObject.Find("Money_Main");
 

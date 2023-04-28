@@ -58,10 +58,22 @@ public class Bullet_Move : MonoBehaviour
             Destroy(gameObject);
         } else if (other.gameObject.CompareTag("Enemy") && mode == 0){
             other.gameObject.GetComponent<Enemy_Health>().health -= dmg_unit;
+            StartCoroutine(BlinkRed(other.gameObject));
             Destroy(gameObject);
         } else if (other.gameObject.CompareTag("Unit") && mode == 1){
             other.gameObject.GetComponent<Unit_Health>().health -= dmg_enemy;
+            StartCoroutine(BlinkRed(other.gameObject));
             Destroy(gameObject);
+        }
+    }
+
+    IEnumerator BlinkRed(GameObject tookDamage)
+    {
+        Color originalColor = tookDamage.transform.GetChild(0).GetComponent<SpriteRenderer>().color;
+        tookDamage.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
+        yield return new WaitForSeconds(0.02f);
+        if (tookDamage){
+            tookDamage.transform.GetChild(0).GetComponent<SpriteRenderer>().color = originalColor;
         }
     }
 }

@@ -43,4 +43,6 @@ public class Shoot : MonoBehaviour
         }
         Instantiate(bullet, pos, Quaternion.identity);
     }
+
+    
 }

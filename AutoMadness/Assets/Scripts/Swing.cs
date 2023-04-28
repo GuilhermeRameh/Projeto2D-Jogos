@@ -88,6 +88,7 @@ public class Swing : MonoBehaviour
             if (timer_hit_u >= 5)
             {
                 other.gameObject.GetComponent<Enemy_Health>().health -= 1;
+                StartCoroutine(BlinkRed(other.gameObject));
                 timer_hit_u = 0;
             }
 
@@ -100,10 +101,22 @@ public class Swing : MonoBehaviour
             if (timer_hit_e >= 5)
             {
                 other.gameObject.GetComponent<Unit_Health>().health -= 1;
+                StartCoroutine(BlinkRed(other.gameObject));
                 timer_hit_e = 0;
             }
 
             //other.gameObject.GetComponent<Unit_Health>().health -= 1;
+        }
+    }
+
+    IEnumerator BlinkRed(GameObject tookDamage)
+    {
+        Color originalColor = tookDamage.transform.GetChild(0).GetComponent<SpriteRenderer>().color;
+        tookDamage.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
+        yield return new WaitForSeconds(0.02f);
+        if (tookDamage != null){
+            Debug.Log(originalColor);
+            tookDamage.transform.GetChild(0).GetComponent<SpriteRenderer>().color = originalColor;
         }
     }
 }
