@@ -180,6 +180,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 0}
   mode: 0
-  speed: 5
-  dmg_unit: 3
+  speed: 20
+  dmg_unit: 1
   dmg_enemy: 1
