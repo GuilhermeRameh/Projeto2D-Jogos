@@ -1,0 +1,297 @@
+fileFormatVersion: 2
+guid: 791c07c8246ee0b46ac3f5a8846440c5
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Steampunk HP Bar - Version 1 (A)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 225
+        width: 124
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f119dea70776624bad639be072dfc79
+      internalID: 620114346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk HP Bar - Version 1 (A)_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 183
+        width: 124
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17e7d7a4c3ec3ba4aa4bdc9210fdf4f6
+      internalID: -1451450502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk HP Bar - Version 1 (A)_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 139
+        width: 124
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed4d1932d50130e48a44f546642e27a6
+      internalID: -673241139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk HP Bar - Version 1 (A)_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 97
+        width: 124
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eddb32c706d308d419baaee81be44248
+      internalID: -1802333374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk HP Bar - Version 1 (A)_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 53
+        width: 124
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1032d26b8f18c6e44b9c12deb371fb51
+      internalID: 1208807354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk HP Bar - Version 1 (A)_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10
+        width: 124
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48cb5fbc2e4654648bbcd18e75211224
+      internalID: -1910643463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Steampunk HP Bar - Version 1 (A)_0: 620114346
+      Steampunk HP Bar - Version 1 (A)_1: 1735252242
+      Steampunk HP Bar - Version 1 (A)_10: 127226896
+      Steampunk HP Bar - Version 1 (A)_11: -829393129
+      Steampunk HP Bar - Version 1 (A)_12: -1896674378
+      Steampunk HP Bar - Version 1 (A)_13: 1323966337
+      Steampunk HP Bar - Version 1 (A)_14: -1059930276
+      Steampunk HP Bar - Version 1 (A)_15: 11317274
+      Steampunk HP Bar - Version 1 (A)_16: -673241139
+      Steampunk HP Bar - Version 1 (A)_17: 1603441806
+      Steampunk HP Bar - Version 1 (A)_18: 569024045
+      Steampunk HP Bar - Version 1 (A)_19: -1761674028
+      Steampunk HP Bar - Version 1 (A)_2: -1888304369
+      Steampunk HP Bar - Version 1 (A)_20: -1562524092
+      Steampunk HP Bar - Version 1 (A)_21: -376189382
+      Steampunk HP Bar - Version 1 (A)_22: -2105327803
+      Steampunk HP Bar - Version 1 (A)_23: -932615243
+      Steampunk HP Bar - Version 1 (A)_24: -1802333374
+      Steampunk HP Bar - Version 1 (A)_25: 206739843
+      Steampunk HP Bar - Version 1 (A)_26: 1369132719
+      Steampunk HP Bar - Version 1 (A)_27: 2072948290
+      Steampunk HP Bar - Version 1 (A)_28: -760805397
+      Steampunk HP Bar - Version 1 (A)_29: -1920505772
+      Steampunk HP Bar - Version 1 (A)_3: -1998868324
+      Steampunk HP Bar - Version 1 (A)_30: -326651732
+      Steampunk HP Bar - Version 1 (A)_31: 1123262291
+      Steampunk HP Bar - Version 1 (A)_32: 1208807354
+      Steampunk HP Bar - Version 1 (A)_33: 1630902365
+      Steampunk HP Bar - Version 1 (A)_34: -1201609721
+      Steampunk HP Bar - Version 1 (A)_35: 1348102847
+      Steampunk HP Bar - Version 1 (A)_36: 1963093240
+      Steampunk HP Bar - Version 1 (A)_37: 2114206373
+      Steampunk HP Bar - Version 1 (A)_38: -2036829334
+      Steampunk HP Bar - Version 1 (A)_39: 1165478048
+      Steampunk HP Bar - Version 1 (A)_4: 1684068462
+      Steampunk HP Bar - Version 1 (A)_40: -1910643463
+      Steampunk HP Bar - Version 1 (A)_41: 232973048
+      Steampunk HP Bar - Version 1 (A)_42: -541236080
+      Steampunk HP Bar - Version 1 (A)_43: 2020661126
+      Steampunk HP Bar - Version 1 (A)_44: -994069543
+      Steampunk HP Bar - Version 1 (A)_45: 824158713
+      Steampunk HP Bar - Version 1 (A)_46: -1914745706
+      Steampunk HP Bar - Version 1 (A)_47: -396168513
+      Steampunk HP Bar - Version 1 (A)_5: -1728552649
+      Steampunk HP Bar - Version 1 (A)_6: -1344064931
+      Steampunk HP Bar - Version 1 (A)_7: 635060157
+      Steampunk HP Bar - Version 1 (A)_8: -1451450502
+      Steampunk HP Bar - Version 1 (A)_9: -196929728
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
