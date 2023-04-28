@@ -100,14 +100,16 @@ public class Spawn_Unit : MonoBehaviour
 
     public void spawn_turret()
     {
-        if (coins.wallet >= 5 && has_turret == 0){
+        if (coins.wallet >= 8 && has_turret == 0){
             error_msg.SetActive(false);
             turret.SetActive(true);
-            coins.wallet -= 10;
+            coins.wallet -= 8;
             has_turret = 1;
-        } else {
+        } else if (has_turret == 1){
             //Might break
             error_msg.transform.GetComponent<TextMeshProUGUI>().text = "You already have a turret!";
+            error_msg.SetActive(true);
+        } else {
             error_msg.SetActive(true);
         }
     }
@@ -117,7 +119,7 @@ public class Spawn_Unit : MonoBehaviour
         if (coins.wallet >= 10 && has_missil == 0){
             error_msg.SetActive(false);
             Instantiate(missil, origin.transform.position, Quaternion.identity);
-            coins.wallet -= 5;
+            coins.wallet -= 10;
             has_missil = 1;
         } else {
             error_msg.SetActive(true);
