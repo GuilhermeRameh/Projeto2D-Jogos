@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Turret : MonoBehaviour
 {
@@ -8,20 +9,21 @@ public class Turret : MonoBehaviour
     public GameObject unit;
     public int mode; //0 = unit, 1 = enemy
     public float speed;
+    public List<GameObject> target = new List<GameObject>();
+    public GameObject close_target;
 
     private float timer;
     private Menu_Controller menuController;
     private Upgrades upgrades;
     private Vector3 pos;
     private GameObject goal;
-    private float range;
+    //private float range;
 
     // Start is called before the first frame update
     void Start()
     {
         unit = GameObject.Find("Turret_Ally");
         menuController = GameObject.Find("MenuCanvas").GetComponent<Menu_Controller>();
-        range = 3;
     }
 
     // Update is called once per frame
@@ -30,30 +32,15 @@ public class Turret : MonoBehaviour
         
         if (menuController.end == false)
         {
-            //if (unit.gameObject.CompareTag("Enemy"))
-            //{
-            //    goal = GameObject.FindGameObjectWithTag("Unit");
-            //    direction = goal.transform.position + unit.transform.position;
-            //}
-            //else
-            //{
-            //    goal = GameObject.FindGameObjectWithTag("Enemy");
-            //    direction = goal.transform.position - unit.transform.position;
-            //}
-
-            //if (direction.magnitude <= range)
-            //{
-            //    timer += Time.deltaTime;
-            //    if (timer >= speed)
-            //    {
-            //        shoot();
-            //        timer = 0;
-            //    }
-            //}
-
-            range += 1;
+            close_target = target.OrderBy(go => go.transform.position.x).FirstOrDefault();
         }
         
+    }
+
+    void OnTriggerEnter2D(Collider2D other){
+        if (other.gameObject.CompareTag("Enemy")){
+            target.Add(other.gameObject);
+        }
     }
 
     void OnTriggerStay2D(Collider2D other)
