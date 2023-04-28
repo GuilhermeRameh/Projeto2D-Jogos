@@ -142,3 +142,9 @@ MonoBehaviour:
   unit: {fileID: 4727127306980362870}
   mode: 1
   speed: 2
+  animator: {fileID: 4727127308229659785}
+--- !u!95 &4727127308229659785 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 909591351452106452, guid: 219f34a98757a43429e409b5b9d0cb0c, type: 3}
+  m_PrefabInstance: {fileID: 5550024351753056861}
+  m_PrefabAsset: {fileID: 0}

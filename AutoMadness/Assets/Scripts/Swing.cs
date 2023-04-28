@@ -12,6 +12,7 @@ public class Swing : MonoBehaviour
     private Menu_Controller menuController;
     public int mode; // 0 = goal, 1 = spawn
     public float dmg;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -86,7 +87,8 @@ public class Swing : MonoBehaviour
             timer_hit_u += 1;
             //Debug.Log(timer_hit);
             if (timer_hit_u >= 5)
-            {
+            {   
+                animator.Play("MeleeAttack");
                 other.gameObject.GetComponent<Enemy_Health>().health -= 1;
                 StartCoroutine(BlinkRed(other.gameObject));
                 timer_hit_u = 0;
@@ -100,6 +102,7 @@ public class Swing : MonoBehaviour
             //Debug.Log(timer_hit);
             if (timer_hit_e >= 5)
             {
+                animator.Play("MeleeAttack");
                 other.gameObject.GetComponent<Unit_Health>().health -= 1;
                 StartCoroutine(BlinkRed(other.gameObject));
                 timer_hit_e = 0;
@@ -115,7 +118,6 @@ public class Swing : MonoBehaviour
         tookDamage.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
         yield return new WaitForSeconds(0.02f);
         if (tookDamage != null){
-            Debug.Log(originalColor);
             tookDamage.transform.GetChild(0).GetComponent<SpriteRenderer>().color = originalColor;
         }
     }

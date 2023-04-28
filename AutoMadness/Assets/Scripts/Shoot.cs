@@ -13,6 +13,7 @@ public class Shoot : MonoBehaviour
     private Menu_Controller menuController;
     private Upgrades upgrades;
     private Vector3 pos;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,7 @@ public class Shoot : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= speed)
             {
+                animator.Play("RangedAttack");
                 shoot();
                 timer = 0;
             }

@@ -197,6 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   dmg: 1
+  animator: {fileID: 8923529929234448309}
 --- !u!114 &7705339035826176940
 MonoBehaviour:
   m_ObjectHideFlags: 0

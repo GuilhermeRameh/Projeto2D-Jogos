@@ -96,6 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 1
   dmg: 1
+  animator: {fileID: 4252360596544271793}
 --- !u!114 &-6661750834509812958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,3 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+--- !u!95 &4252360596544271793 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8923529929234448309, guid: 11eb8217abcd3754b89e7aa10c020243, type: 3}
+  m_PrefabInstance: {fileID: 4671873695830395396}
+  m_PrefabAsset: {fileID: 0}

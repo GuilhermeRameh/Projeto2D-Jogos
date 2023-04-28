@@ -18,6 +18,7 @@ public class Shield : MonoBehaviour
     private Vector3 direction_g;
     private Vector3 direction_e;
     private Vector3 direction;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +54,8 @@ public class Shield : MonoBehaviour
         if (distance > range && menuController.end == false){
             transform.position = Vector2.MoveTowards(this.transform.position, direction, speed * Time.deltaTime);
         }
+        else
+            animator.SetBool("StopMoving", true);
         
     }
 }
