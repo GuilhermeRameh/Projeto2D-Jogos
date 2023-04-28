@@ -27,7 +27,7 @@ public class Spawn_Unit : MonoBehaviour
     {
         menuController = GameObject.Find("MenuCanvas").GetComponent<Menu_Controller>();
         coins = GameObject.Find("Money").GetComponent<Currency>();
-        //turret.SetActive(false);
+        turret.SetActive(false);
         // upgrades = GameObject.Find("SpawnUnit").GetComponent<Upgrades>();
         // ranged = upgrades.ranged;
         // melee = upgrades.melee;
