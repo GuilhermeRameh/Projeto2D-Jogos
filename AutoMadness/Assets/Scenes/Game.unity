@@ -9267,7 +9267,7 @@ MonoBehaviour:
   origin: {fileID: 352130614}
   ranged: {fileID: 909591350505060395, guid: 219f34a98757a43429e409b5b9d0cb0c, type: 3}
   melee: {fileID: 8923529929324927097, guid: 11eb8217abcd3754b89e7aa10c020243, type: 3}
-  shield: {fileID: 8705509076800837902, guid: 6cc158bcdafeb5440a7965fc4ed39510, type: 3}
+  shield: {fileID: 8705509076800837902, guid: 370bfaa60ee1dae45a19a4087d2cb79b, type: 3}
   turret: {fileID: 614752302}
   missil: {fileID: 4703317971254339151, guid: 18b7fea9770eb694e84cfcf6e1e85171, type: 3}
   error_msg: {fileID: 1778999118}
@@ -9291,7 +9291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   melee: {fileID: 8923529929324927097, guid: 11eb8217abcd3754b89e7aa10c020243, type: 3}
   ranged: {fileID: 909591350505060395, guid: 219f34a98757a43429e409b5b9d0cb0c, type: 3}
-  shield: {fileID: 8705509076800837902, guid: 6cc158bcdafeb5440a7965fc4ed39510, type: 3}
+  shield: {fileID: 8705509076800837902, guid: 370bfaa60ee1dae45a19a4087d2cb79b, type: 3}
   error_msg: {fileID: 1778999118}
   bullet: {fileID: 0}
   spawn: {fileID: 0}
