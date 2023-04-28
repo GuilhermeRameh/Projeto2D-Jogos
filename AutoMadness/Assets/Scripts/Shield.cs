@@ -35,8 +35,8 @@ public class Shield : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        direction_g = new Vector3 (goal.transform.position.x/2, goal.transform.position.y, 0);
-        direction_e = new Vector3 (unit.transform.position.x, goal.transform.position.y, 0);
+        direction_g = new Vector3 (goal.transform.position.x/2, goal.transform.position.y + .8f, 0);
+        direction_e = new Vector3 (unit.transform.position.x, goal.transform.position.y +.8f, 0);
         distance_g = Vector2.Distance(transform.position, direction_g);
         distance_e = Vector2.Distance(transform.position, direction_e);
         

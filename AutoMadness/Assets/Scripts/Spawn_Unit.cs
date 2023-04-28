@@ -14,12 +14,14 @@ public class Spawn_Unit : MonoBehaviour
     public GameObject error_msg;
     public int ranged_price;
     public int melee_price;
+    public int shield_price;
     private Menu_Controller menuController;
     private Upgrades upgrades;
     private Currency coins;
     public int cooldown;
     public int has_turret;
     public int has_missil;
+    private Vector3 shield_spawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,8 +31,10 @@ public class Spawn_Unit : MonoBehaviour
         // upgrades = GameObject.Find("SpawnUnit").GetComponent<Upgrades>();
         // ranged = upgrades.ranged;
         // melee = upgrades.melee;
+        // shield = upgrades.shield;
         ranged_price = 2;
         melee_price = 1;
+        shield_price = 4;
         cooldown = 0;
         error_msg.SetActive(false);
         has_turret = 0;
@@ -41,7 +45,8 @@ public class Spawn_Unit : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1)){
-            Instantiate(shield, origin.transform.position, Quaternion.identity);
+            shield_spawn = new Vector3(origin.transform.position.x, origin.transform.position.y + .8f, origin.transform.position.z);
+            Instantiate(shield, shield_spawn, Quaternion.identity);
         } else if (Input.GetKeyDown(KeyCode.Alpha2)){
             Instantiate(missil, origin.transform.position, Quaternion.identity);
             has_missil = 1;
@@ -81,23 +86,35 @@ public class Spawn_Unit : MonoBehaviour
         }
     }
 
+    public void spawn_shield()
+    {
+        if (coins.wallet >= shield_price){
+            error_msg.SetActive(false);
+            shield_spawn = new Vector3(origin.transform.position.x, origin.transform.position.y + 2, origin.transform.position.z);
+            Instantiate(shield, shield_spawn, Quaternion.identity);
+            coins.wallet -= shield_price;
+        } else {
+            error_msg.SetActive(true);
+        }
+    }
+
     public void spawn_turret()
     {
-        if (coins.wallet >= 10 && has_turret == 0){
+        if (coins.wallet >= 5 && has_turret == 0){
             error_msg.SetActive(false);
             turret.SetActive(true);
             coins.wallet -= 10;
             has_turret = 1;
         } else {
             //Might break
-            error_msg.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "You already have a turret!";
+            error_msg.transform.GetComponent<TextMeshProUGUI>().text = "You already have a turret!";
             error_msg.SetActive(true);
         }
     }
 
     public void spawn_missil()
     {
-        if (coins.wallet >= 5 && has_missil == 0){
+        if (coins.wallet >= 10 && has_missil == 0){
             error_msg.SetActive(false);
             Instantiate(missil, origin.transform.position, Quaternion.identity);
             coins.wallet -= 5;
@@ -106,7 +123,7 @@ public class Spawn_Unit : MonoBehaviour
             error_msg.SetActive(true);
             if (has_missil == 1){
                 //Might break
-                error_msg.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Missile in cooldown";
+                error_msg.transform.GetComponent<TextMeshProUGUI>().text = "Missile in cooldown";
             }
         }
     }
