@@ -40,7 +40,7 @@ public class Bullet_Move : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= 5)
+        if (timer >= 1.5f)
         {
             Destroy(gameObject);
         }

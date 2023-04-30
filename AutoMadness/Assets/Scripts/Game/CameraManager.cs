@@ -13,6 +13,7 @@ public class CameraManager : MonoBehaviour
     private GameObject spawn_health;
     private GameObject coin;
     private GameObject money;
+    private GameObject tracker;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class CameraManager : MonoBehaviour
         spawn_health = GameObject.Find("AllyHealth");
         coin = GameObject.Find("Coins_Main");
         money = GameObject.Find("Money_Main");
+        tracker = GameObject.Find("Tracker");
 
         goal_health.SetActive(false);
         spawn_health.SetActive(false);
@@ -41,6 +43,7 @@ public class CameraManager : MonoBehaviour
             spawn_health.SetActive(false);
             coin.SetActive(false);
             money.SetActive(false);
+            tracker.SetActive(true);
         }
         else
         {
@@ -50,6 +53,7 @@ public class CameraManager : MonoBehaviour
             spawn_health.SetActive(true);
             coin.SetActive(true);
             money.SetActive(true);
+            tracker.SetActive(false);
         }
     }
 }

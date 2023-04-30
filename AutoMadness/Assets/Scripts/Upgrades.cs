@@ -11,12 +11,16 @@ public class Upgrades : MonoBehaviour
     public GameObject error_msg;
     public GameObject bullet;
     public Spawn_Unit spawn;
+    public List<GameObject> cooldown_upgrade = new List<GameObject>();
 
     private Currency coins;
     public int cooldown;
     public TextMeshProUGUI melee_price;
     public TextMeshProUGUI ranged_price;
     public TextMeshProUGUI shield_price;
+    public int has_shield;
+    public int has_melee;
+    public int has_ranged;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,12 +32,40 @@ public class Upgrades : MonoBehaviour
         coins = GameObject.Find("Money").GetComponent<Currency>();
         cooldown = 0;
         error_msg.SetActive(false);
+        has_shield = 0;
+        has_melee = 0;
+        has_ranged = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+       if(has_melee == 1){
+            cooldown_upgrade[0].GetComponent<Cooldown>().cooldown -= .01f;
+            if (cooldown_upgrade[0].GetComponent<Cooldown>().cooldown <= 0){
+                cooldown_upgrade[0].GetComponent<Cooldown>().cooldown = 100;
+                cooldown_upgrade[0].GetComponent<Cooldown>().cooldown_bar.SetActive(false);
+                has_melee = 0;
+            }
+        }
+
+        if(has_ranged == 1){
+            cooldown_upgrade[1].GetComponent<Cooldown>().cooldown -= .01f;
+            if (cooldown_upgrade[1].GetComponent<Cooldown>().cooldown <= 0){
+                cooldown_upgrade[1].GetComponent<Cooldown>().cooldown = 100;
+                cooldown_upgrade[1].GetComponent<Cooldown>().cooldown_bar.SetActive(false);
+                has_ranged = 0;
+            }
+        }
+
+        if(has_shield == 1){
+            cooldown_upgrade[2].GetComponent<Cooldown>().cooldown -= .01f;
+            if (cooldown_upgrade[2].GetComponent<Cooldown>().cooldown <= 0){
+                cooldown_upgrade[2].GetComponent<Cooldown>().cooldown = 100;
+                cooldown_upgrade[2].GetComponent<Cooldown>().cooldown_bar.SetActive(false);
+                has_shield = 0;
+            }
+        }
     }
 
     public void upgrade_melee(){
@@ -46,6 +78,8 @@ public class Upgrades : MonoBehaviour
             melee_price.text = spawn.melee_price.ToString();
             spawn.melee = melee;
             coins.wallet -= 5;
+            cooldown_upgrade[0].GetComponent<Cooldown>().cooldown_bar.SetActive(true);
+            has_melee = 1;
         } else {
             error_msg.SetActive(true);
         }
@@ -64,6 +98,8 @@ public class Upgrades : MonoBehaviour
             ranged_price.text = spawn.ranged_price.ToString();
             spawn.ranged = ranged;
             coins.wallet -= 5;
+            has_ranged = 1;
+            cooldown_upgrade[1].GetComponent<Cooldown>().cooldown_bar.SetActive(true);
         } else {
             error_msg.SetActive(true);
         }
@@ -78,6 +114,8 @@ public class Upgrades : MonoBehaviour
             spawn.shield = shield;
             shield_price.text = spawn.shield_price.ToString();
             coins.wallet -= 8;
+            has_shield = 1;
+            cooldown_upgrade[2].GetComponent<Cooldown>().cooldown_bar.SetActive(true);
         } else {
             error_msg.SetActive(true);
         }

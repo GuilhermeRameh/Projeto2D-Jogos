@@ -12,6 +12,7 @@ public class Spawn_Unit : MonoBehaviour
     public GameObject turret;
     public GameObject missil;
     public GameObject error_msg;
+    public List<GameObject> cooldown_buy = new List<GameObject>();
     public int ranged_price;
     public int melee_price;
     public int shield_price;
@@ -21,6 +22,9 @@ public class Spawn_Unit : MonoBehaviour
     public int cooldown;
     public int has_turret;
     public int has_missil;
+    public int has_shield;
+    public int has_melee;
+    public int has_ranged;
     private Vector3 shield_spawn;
     // Start is called before the first frame update
     void Start()
@@ -39,23 +43,46 @@ public class Spawn_Unit : MonoBehaviour
         error_msg.SetActive(false);
         has_turret = 0;
         has_missil = 0;
+        has_shield = 0;
+        has_melee = 0;
+        has_ranged = 0;
     }
 
     // Update is called once per fSrame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1)){
-            shield_spawn = new Vector3(origin.transform.position.x, origin.transform.position.y + .8f, origin.transform.position.z);
-            Instantiate(shield, shield_spawn, Quaternion.identity);
-        } else if (Input.GetKeyDown(KeyCode.Alpha2)){
-            Instantiate(missil, origin.transform.position, Quaternion.identity);
-            has_missil = 1;
+        if(has_melee == 1){
+            cooldown_buy[0].GetComponent<Cooldown>().cooldown -= .5f;
+            if (cooldown_buy[0].GetComponent<Cooldown>().cooldown <= 0){
+                cooldown_buy[0].GetComponent<Cooldown>().cooldown = 100;
+                cooldown_buy[0].GetComponent<Cooldown>().cooldown_bar.SetActive(false);
+                has_melee = 0;
+            }
+        }
+
+        if(has_ranged == 1){
+            cooldown_buy[1].GetComponent<Cooldown>().cooldown -= .5f;
+            if (cooldown_buy[1].GetComponent<Cooldown>().cooldown <= 0){
+                cooldown_buy[1].GetComponent<Cooldown>().cooldown = 100;
+                cooldown_buy[1].GetComponent<Cooldown>().cooldown_bar.SetActive(false);
+                has_ranged = 0;
+            }
+        }
+
+        if(has_shield == 1){
+            cooldown_buy[2].GetComponent<Cooldown>().cooldown -= .25f;
+            if (cooldown_buy[2].GetComponent<Cooldown>().cooldown <= 0){
+                cooldown_buy[2].GetComponent<Cooldown>().cooldown = 100;
+                cooldown_buy[2].GetComponent<Cooldown>().cooldown_bar.SetActive(false);
+                has_shield = 0;
+            }
         }
 
         if(has_missil == 1){
-            cooldown += 1;
-            if (cooldown >= 100){
-                cooldown = 0;
+            cooldown_buy[3].GetComponent<Cooldown>().cooldown -= .01f;
+            if (cooldown_buy[3].GetComponent<Cooldown>().cooldown <= 0){
+                cooldown_buy[3].GetComponent<Cooldown>().cooldown = 100;
+                cooldown_buy[3].GetComponent<Cooldown>().cooldown_bar.SetActive(false);
                 has_missil = 0;
             }
         }
@@ -69,6 +96,8 @@ public class Spawn_Unit : MonoBehaviour
             error_msg.SetActive(false);
             Instantiate(melee, origin.transform.position, Quaternion.identity);
             coins.wallet -= melee_price;
+            has_melee = 1;
+            cooldown_buy[0].GetComponent<Cooldown>().cooldown_bar.SetActive(true);
         } else {
             error_msg.SetActive(true);
         }
@@ -81,6 +110,8 @@ public class Spawn_Unit : MonoBehaviour
             error_msg.SetActive(false);
             Instantiate(ranged, origin.transform.position, Quaternion.identity);
             coins.wallet -= ranged_price;
+            has_ranged = 1;
+            cooldown_buy[1].GetComponent<Cooldown>().cooldown_bar.SetActive(true);
         } else {
             error_msg.SetActive(true);
         }
@@ -93,6 +124,8 @@ public class Spawn_Unit : MonoBehaviour
             shield_spawn = new Vector3(origin.transform.position.x, origin.transform.position.y + 2, origin.transform.position.z);
             Instantiate(shield, shield_spawn, Quaternion.identity);
             coins.wallet -= shield_price;
+            has_shield = 1;
+            cooldown_buy[2].GetComponent<Cooldown>().cooldown_bar.SetActive(true);
         } else {
             error_msg.SetActive(true);
         }
@@ -106,7 +139,6 @@ public class Spawn_Unit : MonoBehaviour
             coins.wallet -= 8;
             has_turret = 1;
         } else if (has_turret == 1){
-            //Might break
             error_msg.transform.GetComponent<TextMeshProUGUI>().text = "You already have a turret!";
             error_msg.SetActive(true);
         } else {
@@ -121,12 +153,9 @@ public class Spawn_Unit : MonoBehaviour
             Instantiate(missil, origin.transform.position, Quaternion.identity);
             coins.wallet -= 10;
             has_missil = 1;
+            cooldown_buy[3].GetComponent<Cooldown>().cooldown_bar.SetActive(true);
         } else {
             error_msg.SetActive(true);
-            if (has_missil == 1){
-                //Might break
-                error_msg.transform.GetComponent<TextMeshProUGUI>().text = "Missile in cooldown";
-            }
         }
     }
 }

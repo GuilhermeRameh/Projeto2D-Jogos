@@ -8,12 +8,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 548215665933830932, guid: 219f34a98757a43429e409b5b9d0cb0c, type: 3}
+      propertyPath: m_Size.x
+      value: 2.3796623
+      objectReference: {fileID: 0}
+    - target: {fileID: 548215665933830932, guid: 219f34a98757a43429e409b5b9d0cb0c, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 548215665933830932, guid: 219f34a98757a43429e409b5b9d0cb0c, type: 3}
       propertyPath: m_Offset.x
-      value: -1
+      value: -0.89117134
       objectReference: {fileID: 0}
     - target: {fileID: 548215665933830932, guid: 219f34a98757a43429e409b5b9d0cb0c, type: 3}
       propertyPath: m_IsTrigger
@@ -87,6 +91,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1160239900653782106, guid: 219f34a98757a43429e409b5b9d0cb0c, type: 3}
+      propertyPath: m_Size.x
+      value: 11.174946
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160239900653782106, guid: 219f34a98757a43429e409b5b9d0cb0c, type: 3}
+      propertyPath: m_Offset.x
+      value: -5.422798
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -3529778166617532975, guid: 219f34a98757a43429e409b5b9d0cb0c, type: 3}
     - {fileID: 8191138521309070330, guid: 219f34a98757a43429e409b5b9d0cb0c, type: 3}
@@ -112,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   mode: 1
-  range: 5
+  range: 0
 --- !u!114 &6175527585888863273
 MonoBehaviour:
   m_ObjectHideFlags: 0
