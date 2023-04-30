@@ -8,6 +8,7 @@ public class Bullet_Move : MonoBehaviour
     public int mode; // 0 = hit enemy, 1 = hit unit
     private GameObject goal;
     public float speed;
+    public Level_Manager level;
     public float dmg_unit;
     public float dmg_enemy;
 
@@ -16,6 +17,9 @@ public class Bullet_Move : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        level = GameObject.Find("Level").GetComponent<Level_Manager>();
+        dmg_unit = level.unit_ranged_dmg;
+        dmg_enemy = level.enemy_ranged_dmg;
         rb = GetComponent<Rigidbody2D>();
         Vector3 direction = new Vector3(0, 0, 0);
 
@@ -40,7 +44,7 @@ public class Bullet_Move : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= 1.5f)
+        if (timer >= 2)
         {
             Destroy(gameObject);
         }

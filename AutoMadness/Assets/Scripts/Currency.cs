@@ -8,10 +8,12 @@ public class Currency : MonoBehaviour
     public int wallet;
     public TextMeshProUGUI money;
     public TextMeshProUGUI money_main;
+    private Level_Manager level;
     // Start is called before the first frame update
     void Start()
     {
-        wallet = 10;
+        level = GameObject.Find("Level").GetComponent<Level_Manager>();
+        wallet = level.wallet;
     }
 
     // Update is called once per frame

@@ -29,15 +29,20 @@ public class Shield : MonoBehaviour
             unit = GameObject.FindGameObjectWithTag("Enemy");
         } else if (mode == 1){
             goal = GameObject.FindGameObjectWithTag("Spawn");
-            unit = GameObject.FindGameObjectWithTag("Unit");
+            unit = GameObject.FindGameObjectWithTag("Spawn");
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        direction_g = new Vector3 (goal.transform.position.x/2, goal.transform.position.y + .8f, 0);
-        direction_e = new Vector3 (unit.transform.position.x, goal.transform.position.y + .8f, 0);
+        if (mode == 0){
+            direction_g = new Vector3 (goal.transform.position.x/2, goal.transform.position.y + .8f, 0);
+            direction_e = new Vector3 (unit.transform.position.x, goal.transform.position.y + .8f, 0);
+        } else if (mode == 1){
+            direction_g = new Vector3 (30, goal.transform.position.y + .8f, 0);
+            direction_e = direction_g;
+        }
         distance_g = Vector2.Distance(transform.position, direction_g);
         distance_e = Vector2.Distance(transform.position, direction_e);
         

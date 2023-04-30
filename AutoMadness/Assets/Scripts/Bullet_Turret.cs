@@ -20,19 +20,6 @@ public class Bullet_Turret : MonoBehaviour
         Vector2 direction = new Vector2(0, 0);
         unit = GameObject.Find("Turret_Ally");
 
-        //if (unit.gameObject.CompareTag("Enemy"))
-        //{
-        //    goal = GameObject.FindGameObjectWithTag("Unit");
-        //    direction = goal.transform.position + unit.transform.position;
-        //    rb.velocity = new Vector2(direction.y, direction.x).normalized * speed;
-        //}
-        //else
-        //{
-        //    goal = GameObject.FindGameObjectWithTag("Enemy");
-        //    direction = goal.transform.position - unit.transform.position;
-        //    rb.velocity = new Vector2(direction.x, direction.y).normalized * speed;
-        //}
-
         goal = unit.GetComponent<Turret>().close_target;
         Vector3 correction = new Vector3(unit.transform.position.x + 2, unit.transform.position.y, 0);
         direction = goal.transform.position - correction;

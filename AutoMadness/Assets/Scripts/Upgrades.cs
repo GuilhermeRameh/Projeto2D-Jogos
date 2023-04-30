@@ -12,6 +12,7 @@ public class Upgrades : MonoBehaviour
     public GameObject bullet;
     public Spawn_Unit spawn;
     public List<GameObject> cooldown_upgrade = new List<GameObject>();
+    public Level_Manager level;
 
     private Currency coins;
     public int cooldown;
@@ -27,6 +28,7 @@ public class Upgrades : MonoBehaviour
         melee = (GameObject)Resources.Load("Prefabs/MeleeUnit", typeof(GameObject));
         ranged = (GameObject)Resources.Load("Prefabs/RangedUnit", typeof(GameObject));
         shield = (GameObject)Resources.Load("Prefabs/ShieldUnit", typeof(GameObject));
+        level = GameObject.Find("Level").GetComponent<Level_Manager>();
 
         spawn = GameObject.Find("SpawnAllies").GetComponent<Spawn_Unit>();
         coins = GameObject.Find("Money").GetComponent<Currency>();
@@ -79,6 +81,7 @@ public class Upgrades : MonoBehaviour
             spawn.melee = melee;
             coins.wallet -= 5;
             cooldown_upgrade[0].GetComponent<Cooldown>().cooldown_bar.SetActive(true);
+            level.unit_melee_speed += 1;
             has_melee = 1;
         } else {
             error_msg.SetActive(true);
@@ -98,6 +101,7 @@ public class Upgrades : MonoBehaviour
             ranged_price.text = spawn.ranged_price.ToString();
             spawn.ranged = ranged;
             coins.wallet -= 5;
+            level.unit_ranged_speed += 1;
             has_ranged = 1;
             cooldown_upgrade[1].GetComponent<Cooldown>().cooldown_bar.SetActive(true);
         } else {

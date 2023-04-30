@@ -13,10 +13,21 @@ public class Swing : MonoBehaviour
     public int mode; // 0 = goal, 1 = spawn
     public float dmg;
     public Animator animator;
+    private Level_Manager level;
     // Start is called before the first frame update
     void Start()
     {
         menuController = GameObject.Find("MenuCanvas").GetComponent<Menu_Controller>();
+        level = GameObject.Find("Level").GetComponent<Level_Manager>();
+
+        if (mode == 0)
+        {
+            dmg = level.unit_melee_dmg;
+        } else if (mode == 1)
+        {
+            dmg = level.enemy_melee_dmg;
+        }
+        
         hit = false;
         hit_goal = false;
         timer = 0;
