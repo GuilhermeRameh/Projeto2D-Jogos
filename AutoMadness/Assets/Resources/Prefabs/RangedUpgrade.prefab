@@ -96,7 +96,7 @@ MonoBehaviour:
   unit: {fileID: 909591350505060395}
   mode: 0
   speed: 2
-  animator: {fileID: 0}
+  animator: {fileID: 909591351452106452}
 --- !u!114 &8191138521309070330
 MonoBehaviour:
   m_ObjectHideFlags: 0

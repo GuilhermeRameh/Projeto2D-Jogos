@@ -65,7 +65,9 @@ public class Shoot : MonoBehaviour
                 timer += Time.deltaTime;
                 if (timer >= speed)
                 {
-                    animator.Play("RangedAttack");
+                    // animator.Play("RangedAttack");
+                    AudioManager.instance.playAudio("Shoot");
+                    animator.SetTrigger("RangedAttack");
                     shoot();
                     timer = 0;
                 }
@@ -77,7 +79,9 @@ public class Shoot : MonoBehaviour
                 timer += Time.deltaTime;
                 if (timer >= speed)
                 {
-                    animator.Play("RangedAttack");
+                    // animator.Play("RangedAttack");
+                    AudioManager.instance.playAudio("Shoot");
+                    animator.SetTrigger("RangedAttack");
                     shoot();
                     timer = 0;
                 }
@@ -88,7 +92,9 @@ public class Shoot : MonoBehaviour
                 timer += Time.deltaTime;
                 if (timer >= speed)
                 {
-                    animator.Play("RangedAttack");
+                    // animator.Play("RangedAttack");
+                    AudioManager.instance.playAudio("Shoot");
+                    animator.SetTrigger("RangedAttack");
                     shoot();
                     timer = 0;
                 }
@@ -99,7 +105,9 @@ public class Shoot : MonoBehaviour
                 timer += Time.deltaTime;
                 if (timer >= speed)
                 {
-                    animator.Play("RangedAttack");
+                    // animator.Play("RangedAttack");
+                    AudioManager.instance.playAudio("Shoot");
+                    animator.SetTrigger("RangedAttack");
                     shoot();
                     timer = 0;
                 }

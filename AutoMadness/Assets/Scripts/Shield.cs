@@ -61,6 +61,7 @@ public class Shield : MonoBehaviour
         }
         else
             animator.SetBool("StopMoving", true);
+            AudioManager.instance.playAudio("Shilded");
         
     }
 }

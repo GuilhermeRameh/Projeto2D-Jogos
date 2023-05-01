@@ -8,6 +8,9 @@ using TMPro;
 
 public class Menu_Controller : MonoBehaviour
 {
+    [SerializeField]
+    private LevelBools completedLevels;
+
     public GameObject EndGamePanel;
     public GameObject[] PauseMenu;
     public bool end;
@@ -18,6 +21,7 @@ public class Menu_Controller : MonoBehaviour
         end = false;
         EndGamePanel.SetActive(false);
         PauseMenu[1].SetActive(false);
+        level = Level_Manager.instance.ReturnLevel();
 
     }
 
@@ -25,8 +29,7 @@ public class Menu_Controller : MonoBehaviour
     {
         EndGamePanel.SetActive(true);
         EndGamePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Enemy Defeated! <br> <br> Press R to restart";
-        // levelCompletionData.completedLevels[level] = true;
-        Debug.Log(level);
+        completedLevels.Value[level-1] = true;
         end = true;
     }
 
@@ -50,7 +53,6 @@ public class Menu_Controller : MonoBehaviour
                 Restart();
             }
         }
-        level = Level_Manager.instance.ReturnLevel();
     }
 
     public void Pause()
@@ -65,6 +67,11 @@ public class Menu_Controller : MonoBehaviour
         Time.timeScale = 1;
         PauseMenu[0].SetActive(true);
         PauseMenu[1].SetActive(false);
+    }
+
+    public void PlaySFX(string s)
+    {
+        AudioManager.instance.playAudio(s);
     }
 
 }

@@ -103,6 +103,7 @@ public class Swing : MonoBehaviour
                 other.gameObject.GetComponent<Enemy_Health>().health -= 1;
                 StartCoroutine(BlinkRed(other.gameObject));
                 timer_hit_u = 0;
+                AudioManager.instance.playAudio("Swing");
             }
 
             //other.gameObject.GetComponent<Enemy_Health>().health -= dmg;
@@ -117,6 +118,7 @@ public class Swing : MonoBehaviour
                 other.gameObject.GetComponent<Unit_Health>().health -= 1;
                 StartCoroutine(BlinkRed(other.gameObject));
                 timer_hit_e = 0;
+                AudioManager.instance.playAudio("Swing");
             }
 
             //other.gameObject.GetComponent<Unit_Health>().health -= 1;
