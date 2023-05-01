@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Level_Manager : MonoBehaviour
 {
+    public static Level_Manager instance;
+    void Awake() { instance = this; }
+
     public Scene currentScene;
     public float enemy_spawn_speed;
     public float enemy_shoot_speed;
@@ -75,9 +78,8 @@ public class Level_Manager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public int ReturnLevel()
     {
-        
+        return level;
     }
 }

@@ -11,6 +11,7 @@ public class Menu_Controller : MonoBehaviour
     public GameObject EndGamePanel;
     public GameObject[] PauseMenu;
     public bool end;
+    private int level;
 
     void Start()
     {
@@ -24,6 +25,8 @@ public class Menu_Controller : MonoBehaviour
     {
         EndGamePanel.SetActive(true);
         EndGamePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Enemy Defeated! <br> <br> Press R to restart";
+        // levelCompletionData.completedLevels[level] = true;
+        Debug.Log(level);
         end = true;
     }
 
@@ -47,6 +50,7 @@ public class Menu_Controller : MonoBehaviour
                 Restart();
             }
         }
+        level = Level_Manager.instance.ReturnLevel();
     }
 
     public void Pause()
