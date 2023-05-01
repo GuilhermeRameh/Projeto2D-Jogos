@@ -25,7 +25,7 @@ public class Tracker : MonoBehaviour
                 enemy_list.RemoveAt(i);
                 Destroy(tracker.transform.GetChild(i).gameObject);
             } else {
-                update = new Vector2(enemy_list[i].transform.position.x*4.66f-140, 143);
+                update = new Vector2(enemy_list[i].transform.position.x*4.66f-140, 120);
                 tracker.transform.GetChild(i).transform.position = update;
             }
         }
@@ -35,7 +35,7 @@ public class Tracker : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.CompareTag("Enemy")){
             enemy_list.Add(other.gameObject);
-            pos = new Vector2(140, 143);
+            pos = new Vector2(140, 120);
             Instantiate(enemy, pos, Quaternion.identity).transform.parent=tracker.transform;
         }
     }

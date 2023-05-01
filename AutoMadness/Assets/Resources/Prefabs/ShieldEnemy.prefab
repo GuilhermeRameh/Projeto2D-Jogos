@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 8641805836081293681}
   - component: {fileID: -18514057467593946}
   - component: {fileID: 3855377010340592898}
-  - component: {fileID: 4512575966646001670}
+  - component: {fileID: -6327975001310447591}
   m_Layer: 0
   m_Name: ShieldEnemy
   m_TagString: Enemy
@@ -203,7 +203,7 @@ MonoBehaviour:
   speed: 8
   mode: 1
   animator: {fileID: 4569847959028012883}
---- !u!114 &4512575966646001670
+--- !u!114 &-6327975001310447591
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,7 +212,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8705509076800837902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 723aa8c2a88212c4bb32fb533028d363, type: 3}
+  m_Script: {fileID: 11500000, guid: 2aec050f4a0e7734491cbb4b323c1890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 5
+  unit: {fileID: 8705509076800837902}

@@ -684,6 +684,7 @@ GameObject:
   - component: {fileID: 453384190}
   - component: {fileID: 453384189}
   - component: {fileID: 453384188}
+  - component: {fileID: 453384192}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -779,6 +780,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &453384192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453384187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095bc06b8414d3e429cef64b4acd94d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  completedLevels: {fileID: 0}
+  EndGamePanel: {fileID: 0}
+  PauseMenu: []
+  story: {fileID: 0}
+  instructions: {fileID: 0}
+  currentScene:
+    m_Handle: 0
+  end: 0
+  complete: 0
 --- !u!1 &484382607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,6 +1724,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1d3e8eaa190d24a8cc137bf78fcf20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1705079543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1705079545}
+  - component: {fileID: 1705079544}
+  m_Layer: 0
+  m_Name: Level
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1705079544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705079543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063c10086d1f2df4b8a80584788cb6df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScene:
+    m_Handle: 0
+  enemy_spawn_speed: 0
+  enemy_shoot_speed: 0
+  enemy_health: 0
+  enemy_melee_dmg: 0
+  enemy_ranged_dmg: 0
+  enemy_melee_speed: 0
+  enemy_ranged_speed: 0
+  tank_health: 0
+  tank_dmg: 0
+  tank_speed: 0
+  tank_shoot_speed: 0
+  goal_health: 0
+  shield_health: 0
+  unit_shoot_speed: 0
+  unit_melee_dmg: 0
+  unit_ranged_dmg: 0
+  unit_melee_speed: 0
+  unit_ranged_speed: 0
+  spawn_health: 0
+  wallet: 0
+  level: 0
+--- !u!4 &1705079545
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705079543}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 518.6945, y: 247.62552, z: -1.7356262}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1788748598
 GameObject:
   m_ObjectHideFlags: 0

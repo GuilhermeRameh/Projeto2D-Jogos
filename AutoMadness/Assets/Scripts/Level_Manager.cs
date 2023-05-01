@@ -21,6 +21,7 @@ public class Level_Manager : MonoBehaviour
     public float tank_speed;
     public float tank_shoot_speed;
     public float goal_health;
+    public float shield_health;
 
     public float unit_shoot_speed;
     public float unit_melee_dmg;
@@ -34,6 +35,7 @@ public class Level_Manager : MonoBehaviour
     void Start()
     {
         currentScene = SceneManager.GetActiveScene();
+        level = 0;
 
         if (currentScene.name == "Level1"){
             enemy_spawn_speed = 6;
@@ -77,6 +79,7 @@ public class Level_Manager : MonoBehaviour
             enemy_ranged_dmg = 1;
             enemy_melee_speed = 4.5f;
             enemy_ranged_speed = 2.5f;
+            shield_health = 5;
             unit_shoot_speed = 2;
             unit_melee_dmg = 1.5f;
             unit_ranged_dmg = 1;
@@ -94,6 +97,7 @@ public class Level_Manager : MonoBehaviour
             enemy_ranged_dmg = 1;
             enemy_melee_speed = 4.5f;
             enemy_ranged_speed = 2.5f;
+            shield_health = 5;
             unit_shoot_speed = 2;
             unit_melee_dmg = 1.5f;
             unit_ranged_dmg = 1;
@@ -111,6 +115,7 @@ public class Level_Manager : MonoBehaviour
             enemy_ranged_dmg = 1;
             enemy_melee_speed = 4.5f;
             enemy_ranged_speed = 2.5f;
+            shield_health = 8;
             unit_shoot_speed = 2;
             unit_melee_dmg = 1.5f;
             unit_ranged_dmg = 1;

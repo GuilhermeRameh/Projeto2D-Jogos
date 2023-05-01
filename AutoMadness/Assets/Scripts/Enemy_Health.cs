@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Enemy_Health : MonoBehaviour
 {
     public float health;
+    public GameObject unit;
     private float maxHealth;
     private Currency coins;
     private Level_Manager level;
@@ -15,7 +16,12 @@ public class Enemy_Health : MonoBehaviour
     {
         coins = GameObject.Find("Money").GetComponent<Currency>();
         level = GameObject.Find("Level").GetComponent<Level_Manager>();
-        health = level.enemy_health;
+        
+        if (unit != null && unit.name == "ShieldEnemy(Clone)"){
+            health = level.shield_health;
+        } else{
+            health = level.enemy_health;
+        }
         maxHealth = health;
     }
 
