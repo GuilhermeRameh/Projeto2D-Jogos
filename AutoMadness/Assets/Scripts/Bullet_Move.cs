@@ -15,6 +15,7 @@ public class Bullet_Move : MonoBehaviour
     private float timer;
     private Rigidbody2D rb;
     // Start is called before the first frame update
+    // Adaptado de "2D Enemy Shooting Unity Tutorial" (https://www.youtube.com/watch?v=--u20SaCCow)
     void Start()
     {
         level = GameObject.Find("Level").GetComponent<Level_Manager>();
