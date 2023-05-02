@@ -8,7 +8,7 @@ Jogo Tower Defense frontal baseado em estética steampunk.
 
 [Milanote](https://app.milanote.com/1PF1A91haiNdcd?p=WBl8CGhIKxQ) com o GDD do jogo <br>
 [Itch.io](https://acsouza2398.itch.io/automadness) <br>
-[Gameplay]
+[Gameplay](https://youtu.be/5Dg7QRpDXUk)
 
 ## Referências de código
  - [Unity UI Tutorial - Create a Health Bar in 90 Seconds](https://www.youtube.com/watch?v=mi_SP0sippI)
