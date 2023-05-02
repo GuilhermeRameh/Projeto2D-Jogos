@@ -1,6 +1,8 @@
 # AutoMadness
 Jogo 2D desenvolvido por Ana Carolina Souza e Guilherme Rameh
 
+<img src="AutoMadness/AutoMadness.png" width="300" height="150">
+
 ---
 
 ## Sobre o jogo
